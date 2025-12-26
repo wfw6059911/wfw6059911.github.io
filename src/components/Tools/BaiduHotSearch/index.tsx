@@ -40,6 +40,13 @@ const REQUEST_TIMEOUT = 10000;
 const CACHE_DURATION = 30 * 60 * 1000;
 const CACHE_KEY = 'baidu-hot-search-cache';
 
+// 百度热搜 API 地址
+const BAIDU_API_URL = 'https://top.baidu.com/api/board?platform=wise&tab=realtime';
+// 是否为生产环境
+const isProduction = import.meta.env.PROD;
+// CORS 代理服务（生产环境使用）
+const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
+
 // 缓存结构
 interface CacheData {
   data: HotSearchItem[];
@@ -117,7 +124,13 @@ export default function BaiduHotSearch() {
     const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT);
 
     try {
-      const res = await fetch('/api/baidu-hot/api/board?platform=wise&tab=realtime', {
+      // 根据环境选择请求方式
+      // 开发环境使用 Vite 代理，生产环境使用 CORS 代理
+      const apiUrl = isProduction
+        ? `${CORS_PROXY}${encodeURIComponent(BAIDU_API_URL)}`
+        : '/api/baidu-hot/api/board?platform=wise&tab=realtime';
+
+      const res = await fetch(apiUrl, {
         signal: controller.signal,
       });
       clearTimeout(timeoutId);
