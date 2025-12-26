@@ -1,0 +1,279 @@
+.container {
+  padding: 24px;
+  max-width: 100%;
+}
+
+/* 当前 IP 区域 */
+.currentIp {
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.currentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.currentLabel {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.refreshBtn {
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.refreshBtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.refreshBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loading {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.error {
+  font-size: 14px;
+  color: #ffccc7;
+}
+
+.currentInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ipValue {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 28px;
+  font-weight: 600;
+  font-family: 'Monaco', 'Menlo', monospace;
+}
+
+.copyBtn {
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 60px;
+}
+
+.copyBtn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.locationInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.infoLabel {
+  opacity: 0.8;
+  min-width: 70px;
+}
+
+.infoValue {
+  font-weight: 500;
+}
+
+/* 查询区域 */
+.section {
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 12px;
+}
+
+.input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+.input::placeholder {
+  color: #bfbfbf;
+}
+
+.btn {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* 查询结果 */
+.result {
+  margin-top: 16px;
+  padding: 16px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+}
+
+.resultError {
+  color: #ff4d4f;
+  font-size: 14px;
+}
+
+.resultInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.resultRow {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.resultLabel {
+  color: #666;
+  min-width: 80px;
+}
+
+.resultValue {
+  color: #333;
+  font-weight: 500;
+}
+
+/* 使用说明 */
+.tips {
+  margin-top: 24px;
+  padding: 16px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.tips h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.tips ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.tips li {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* 深色模式 */
+[data-theme='dark'] .sectionTitle {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] .input {
+  background: #2a2a2a;
+  border-color: #3a3a3a;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] .input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.3);
+}
+
+[data-theme='dark'] .input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+[data-theme='dark'] .result {
+  background: #2a2a2a;
+  border-color: #3a3a3a;
+}
+
+[data-theme='dark'] .resultLabel {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+[data-theme='dark'] .resultValue {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] .tips {
+  background: #2a2a2a;
+}
+
+[data-theme='dark'] .tips h4 {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] .tips li {
+  color: rgba(255, 255, 255, 0.65);
+}

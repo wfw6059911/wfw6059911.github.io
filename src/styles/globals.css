@@ -1,0 +1,177 @@
+/* 导入 CSS 变量 */
+@import './variables.css';
+
+/* 导入 Inter 字体 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Inter', 'Alibaba PuHuiTi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+/* 浅色模式 */
+:root {
+  /* 主题色 */
+  --gradient-primary: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+  --color-primary: #667eea;
+  --color-secondary: #764ba2;
+  --color-accent: #f093fb;
+
+  /* 间距系统 - 基于 8px 网格 */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 64px;
+
+  /* 安全间距 */
+  --safe-padding: 24px;
+
+  /* 容器宽度 */
+  --container-max-width: 1800px;
+
+  /* 网格间距 */
+  --grid-gap: 24px;
+  --grid-gap-lg: 32px;
+}
+
+/* 深色模式 */
+[data-theme='dark'] {
+  --color-primary: #764ba2;
+  --color-secondary: #a78bfa;
+  --color-accent: #f093fb;
+}
+
+/* 渐变背景装饰 */
+.gradient-bg {
+  background: var(--gradient-primary);
+}
+
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 轮播图样式 */
+.hero-carousel .slick-slide {
+  height: 400px;
+}
+
+.hero-carousel .slick-slide > div {
+  height: 100%;
+}
+
+/* 卡片悬停效果 */
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(102, 126, 234, 0.15);
+}
+
+/* 响应式断点 */
+@media (max-width: 768px) {
+  .hero-carousel .slick-slide {
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-carousel .slick-slide {
+    height: 220px;
+  }
+}
+
+/* ===== 布局系统 ===== */
+
+/* 主容器 */
+.main-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--safe-padding);
+  width: 100%;
+}
+
+/* 页面内容区 */
+.page-content {
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-2xl);
+}
+
+/* 区块间距 */
+.section {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+/* 区块标题 */
+.section-header {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* 网格布局 */
+.grid {
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* 响应式网格 */
+@media (max-width: 992px) {
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --safe-padding: 16px;
+    --grid-gap: 16px;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .page-content {
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --safe-padding: 12px;
+  }
+}

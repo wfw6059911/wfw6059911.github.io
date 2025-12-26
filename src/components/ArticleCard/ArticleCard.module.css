@@ -1,0 +1,94 @@
+.card {
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(102, 126, 234, 0.12);
+}
+
+.card :global(.ant-card-body) {
+  padding: 0;
+}
+
+.cover {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: background-image 0.3s ease;
+}
+
+/* 图片加载占位状态 */
+.loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+[data-theme='dark'] .loading {
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+}
+
+.category {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.content {
+  padding: 20px;
+}
+
+.title {
+  margin-bottom: 0.5em;
+  /* min-height: 52px; */
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.description {
+  margin-bottom: 0 !important;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+/* 深色模式 */
+[data-theme='dark'] .card {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .description {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .cover {
+    height: 140px;
+  }
+
+  .content {
+    padding: 16px;
+  }
+
+  .title {
+    min-height: auto;
+  }
+}

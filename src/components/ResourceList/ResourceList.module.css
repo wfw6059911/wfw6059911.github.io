@@ -1,0 +1,118 @@
+.container {
+  margin-bottom: 64px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.sectionTitle {
+  margin: 0 !important;
+  font-size: 24px;
+  background: linear-gradient(135deg, #764ba2, #f093fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.moreLink {
+  color: #764ba2;
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.moreLink:hover {
+  color: #f093fb;
+}
+
+/* 网格布局：1大 + 4小 */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  /* 固定高度确保左右对齐 */
+  height: 420px;
+}
+
+/* 左侧大卡片 */
+.largeCard {
+  height: 100%;
+}
+
+/* 右侧小卡片容器 */
+.smallCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  height: 100%;
+}
+
+.smallCard {
+  min-height: 0;
+  height: 100%;
+}
+
+/* 深色模式 */
+[data-theme='dark'] .header {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 响应式 */
+@media (max-width: 1200px) {
+  .grid {
+    gap: 12px;
+    height: 380px;
+  }
+
+  .smallCards {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-bottom: 48px;
+  }
+
+  .header {
+    margin-bottom: 24px;
+  }
+
+  .sectionTitle {
+    font-size: 20px;
+  }
+
+  /* 移动端改为单列布局 */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    height: auto;
+  }
+
+  .largeCard {
+    height: 200px;
+  }
+
+  .smallCards {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    height: auto;
+  }
+
+  .smallCard {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .smallCards {
+    grid-template-columns: 1fr;
+  }
+}

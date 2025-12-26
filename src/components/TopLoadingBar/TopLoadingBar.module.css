@@ -1,0 +1,25 @@
+/* 顶部加载进度条 */
+.loadingBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+  box-shadow: 0 0 10px rgba(102, 126, 234, 0.5), 0 0 5px rgba(118, 75, 162, 0.3);
+  transition: width 0.2s ease-out, opacity 0.2s ease-out;
+  border-radius: 0 2px 2px 0;
+}
+
+/* 减少动画偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .progress {
+    transition: none;
+  }
+}

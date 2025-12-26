@@ -1,0 +1,269 @@
+.container {
+  padding: 24px;
+  max-width: 100%;
+}
+
+/* 当前 UA 展示区 */
+.currentUA {
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  color: #fff;
+}
+
+.currentUALabel {
+  font-size: 12px;
+  opacity: 0.85;
+  margin-bottom: 8px;
+}
+
+.currentUAValue {
+  font-size: 13px;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  line-height: 1.6;
+  resize: vertical;
+  transition: all 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.textarea:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+.textarea::placeholder {
+  color: #bfbfbf;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btnSecondary {
+  padding: 10px 20px;
+  background: #f5f5f5;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnSecondary:hover {
+  background: #e8e8e8;
+  border-color: #bfbfbf;
+}
+
+/* 解析结果区域 */
+.resultSection {
+  margin-bottom: 24px;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+}
+
+.resultHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.resultHeader .sectionTitle {
+  margin-bottom: 0;
+}
+
+.copyBtn {
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid #667eea;
+  border-radius: 4px;
+  color: #667eea;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copyBtn:hover {
+  background: #667eea;
+  color: #fff;
+}
+
+.resultGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.resultItem {
+  padding: 12px 16px;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #e8e8e8;
+}
+
+.resultLabel {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 6px;
+}
+
+.resultValue {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  word-break: break-all;
+}
+
+/* 使用说明 */
+.tips {
+  margin-top: 24px;
+  padding: 16px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.tips h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.tips ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.tips li {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* 深色模式 */
+[data-theme='dark'] .currentUA {
+  background: linear-gradient(135deg, #5a6fd6 0%, #6b4190 100%);
+}
+
+[data-theme='dark'] .sectionTitle {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] .textarea {
+  background: #2a2a2a;
+  border-color: #3a3a3a;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] .textarea:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.3);
+}
+
+[data-theme='dark'] .textarea::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+[data-theme='dark'] .btnSecondary {
+  background: #2a2a2a;
+  border-color: #3a3a3a;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+[data-theme='dark'] .btnSecondary:hover {
+  background: #3a3a3a;
+  border-color: #4a4a4a;
+}
+
+[data-theme='dark'] .resultSection {
+  background: #1f1f1f;
+  border-color: #3a3a3a;
+}
+
+[data-theme='dark'] .resultItem {
+  background: #2a2a2a;
+  border-color: #3a3a3a;
+}
+
+[data-theme='dark'] .resultLabel {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+[data-theme='dark'] .resultValue {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] .copyBtn {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+[data-theme='dark'] .copyBtn:hover {
+  background: #667eea;
+  color: #fff;
+}
+
+[data-theme='dark'] .tips {
+  background: #2a2a2a;
+}
+
+[data-theme='dark'] .tips h4 {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] .tips li {
+  color: rgba(255, 255, 255, 0.65);
+}

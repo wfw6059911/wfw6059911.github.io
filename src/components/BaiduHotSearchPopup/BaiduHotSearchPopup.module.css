@@ -1,0 +1,98 @@
+.popup {
+  position: fixed;
+  right: 80px;
+  bottom: 24px;
+  width: 500px;
+  height: 600px;
+  z-index: 90;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.closeBtn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.content {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* 覆盖内部 BaiduHotSearch 组件的样式 */
+.content > div {
+  height: 100%;
+}
+
+/* 深色模式 */
+[data-theme='dark'] .popup {
+  background: #1a1a1a;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme='dark'] .header {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 响应式：移动端隐藏 */
+@media (max-width: 768px) {
+  .popup {
+    display: none;
+  }
+}
+
+/* 中等屏幕适配 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .popup {
+    width: 400px;
+    height: 500px;
+    right: 16px;
+    bottom: 16px;
+  }
+}

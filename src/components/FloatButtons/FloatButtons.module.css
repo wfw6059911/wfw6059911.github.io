@@ -1,0 +1,183 @@
+.button {
+  position: fixed;
+  right: 24px;
+  z-index: 99;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* 工作年限按钮 */
+.workYearsButton {
+  bottom: 360px;
+  background: linear-gradient(135deg, #f5af19 0%, #f12711 100%);
+  border-color: transparent;
+}
+
+.workYearsButton .icon {
+  color: #fff;
+}
+
+/* 请假攻略按钮 */
+.leaveButton {
+  bottom: 304px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: transparent;
+}
+
+.leaveButton .icon {
+  color: #fff;
+}
+
+/* 每日弹窗按钮 */
+.dailyButton {
+  bottom: 248px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: transparent;
+}
+
+.dailyButton .icon {
+  color: #fff;
+}
+
+/* 百度热搜按钮 */
+.baiduButton {
+  bottom: 192px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: transparent;
+}
+
+.baiduButton .icon {
+  color: #fff;
+}
+
+/* 联系客服按钮 */
+.serviceButton {
+  bottom: 136px;
+}
+
+/* 返回顶部按钮 */
+.backTopButton {
+  bottom: 80px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* 上下悬浮动画 */
+.floatAnimation {
+  animation: floatBounce 2s ease-in-out infinite;
+}
+
+.floatDelay {
+  animation-delay: 0.5s;
+}
+
+@keyframes floatBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* 禁用状态（弹窗已打开时） */
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  animation: none;
+}
+
+.disabled:hover {
+  transform: none;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+}
+
+/* 返回顶部按钮显示状态 */
+.backTopButton.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-color: transparent;
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.35);
+  transform: translateY(-2px);
+}
+
+.button:hover .icon {
+  color: #fff;
+}
+
+.icon {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.65);
+  transition: color 0.3s ease;
+}
+
+/* 深色模式 */
+[data-theme='dark'] .button {
+  background: #1a1a1a;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .icon {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+[data-theme='dark'] .button:hover {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-color: transparent;
+}
+
+[data-theme='dark'] .button:hover .icon {
+  color: #fff;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .button {
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .workYearsButton {
+    bottom: 340px;
+  }
+
+  .leaveButton {
+    bottom: 284px;
+  }
+
+  .dailyButton {
+    bottom: 228px;
+  }
+
+  .baiduButton {
+    display: none;
+  }
+
+  .serviceButton {
+    bottom: 116px;
+  }
+
+  .backTopButton {
+    bottom: 60px;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+}

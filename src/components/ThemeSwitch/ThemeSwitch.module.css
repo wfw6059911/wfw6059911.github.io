@@ -1,0 +1,70 @@
+.switch {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  border-radius: 11px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  background: #fcfcfc;
+  border: 1px solid rgb(60 60 60 / 17%);
+}
+
+.switch:hover {
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+}
+
+/* 深色模式下的背景 */
+.switchDark {
+  /* background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); */
+    background: #2f2f2f;
+  border: 1px solid rgba(84, 84, 84, .65);
+}
+
+.switchDark:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* 滑块 */
+.knob {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  top: 2px;
+  left: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* 深色模式下滑块位置 */
+.knobDark {
+  left: 20px;
+}
+
+/* 图标样式 */
+.icon {
+  font-size: 12px;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+/* 太阳图标 - 浅色模式 */
+.sunIcon {
+  color: #f59e0b;
+}
+
+/* 月亮图标 - 深色模式 */
+.moonIcon {
+  color: #6366f1;
+}

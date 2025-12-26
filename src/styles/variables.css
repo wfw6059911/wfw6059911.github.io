@@ -1,0 +1,48 @@
+/* CSS 变量定义 - 全局设计系统 */
+
+:root {
+  /* 主色彩系统 */
+  --color-primary: #667eea;
+  --color-primary-dark: #764ba2;
+  --color-accent: #f093fb;
+
+  /* 文本颜色 */
+  --color-text-primary: rgba(0, 0, 0, 0.85);
+  --color-text-secondary: rgba(0, 0, 0, 0.65);
+  --color-text-tertiary: rgba(0, 0, 0, 0.45);
+
+  /* 边框颜色 */
+  --color-border: rgba(0, 0, 0, 0.06);
+  --color-border-hover: rgba(0, 0, 0, 0.1);
+
+  /* 阴影系统 */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 16px 32px rgba(102, 126, 234, 0.12);
+  --shadow-lg-accent: 0 16px 32px rgba(240, 147, 251, 0.12);
+
+  /* 圆角系统 */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* 过渡时间 */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+
+  /* 间距系统 */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+}
+
+/* 深色模式变量 */
+[data-theme='dark'] {
+  --color-text-primary: rgba(255, 255, 255, 0.85);
+  --color-text-secondary: rgba(255, 255, 255, 0.65);
+  --color-text-tertiary: rgba(255, 255, 255, 0.45);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-hover: rgba(255, 255, 255, 0.2);
+}

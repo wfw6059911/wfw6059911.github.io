@@ -1,0 +1,57 @@
+.codeBlock {
+  margin: 16px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #282c34;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background: #21252b;
+  border-bottom: 1px solid #3e4451;
+}
+
+.language {
+  font-size: 13px;
+  color: #abb2bf;
+  font-weight: 500;
+}
+
+.copyButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: transparent;
+  border: 1px solid #3e4451;
+  border-radius: 4px;
+  color: #abb2bf;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copyButton:hover {
+  background: #3e4451;
+  color: #e5c07b;
+  border-color: #e5c07b;
+}
+
+.copyText {
+  font-size: 12px;
+}
+
+/* 确保代码高亮区域样式正确 */
+.codeBlock :global(pre) {
+  margin: 0 !important;
+  border-radius: 0 0 8px 8px !important;
+}
+
+.codeBlock :global(code) {
+  font-family: 'Fira Code', 'Source Code Pro', Consolas, Monaco, 'Courier New', monospace !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
